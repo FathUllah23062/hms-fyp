@@ -1,0 +1,14 @@
+.team {
+    padding: 200px;
+}
+
+.team-content {
+    width: 82vw;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card img {
+    height: 200px;
+}

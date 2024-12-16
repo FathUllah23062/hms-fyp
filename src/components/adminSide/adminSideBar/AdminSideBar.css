@@ -1,0 +1,12 @@
+a {
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+a:hover {
+    box-shadow: 1px 1px 10px gray;
+    border-radius: 10px;
+    transition: linear 0.4s all;
+    cursor: pointer;
+    transform: scale(1.02);
+}

@@ -1,0 +1,14 @@
+.facilities {
+    padding: 100px;
+    width: 100vw;
+    height: 95vh;
+}
+
+.facilities-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+
+}
