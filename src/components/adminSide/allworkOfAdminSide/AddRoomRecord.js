@@ -29,6 +29,7 @@ export function AddRoomRecord() {
         setRoomNo("");
         setBeds("");
         setPrice("");
+        navigate('/show-room')
         toast.success(" Room Record is add successfully!", {
             position: "top-center"
         });

@@ -25,6 +25,7 @@ export function EnterExpenses() {
         setItem('');
         setPrice('');
         setDate('');
+        navigate('/show-expenses');
         toast.success("Record is add successfully.", {
             position: "top-center"
         });

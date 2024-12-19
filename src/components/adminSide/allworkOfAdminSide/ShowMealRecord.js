@@ -168,17 +168,21 @@ export function ShowMealRecord() {
 
             <div>
                 <Modal isOpen={showMeal} toggle={showMealFun} style={{ maxWidth: '75%', width: '75%' }} >
-                    <ModalHeader toggle={showMealFun}>
+                    {/* this is the Modal header */}
+                    <div className="modal-header">
+                        <div>
+                            <Input
+                                placeholder='Search'
+                                type='text'
+                                onChange={mealHandelFilter}
 
-                        <Input
-                            placeholder='Search'
-                            type='text'
-                            onChange={mealHandelFilter}
-
-                        />
-
-
-                    </ModalHeader>
+                            />
+                        </div>
+                        <div>
+                            <Button outline className="me-2" onClick={() => navigate('/add-meal')}>Add New Record</Button>
+                            <button type="button" className="btn-close" aria-label="Close" onClick={showMealFun}></button>
+                        </div>
+                    </div>
                     <ModalBody>
                         <DataTable
                             columns={mealColumns}

@@ -172,17 +172,22 @@ export function ShowExpenses() {
             {/* Modal to Show Expenses */}
             <div>
                 <Modal isOpen={showExpenses} toggle={showExpensesFun} style={{ maxWidth: '75%', width: '75%' }} >
-                    <ModalHeader toggle={showExpensesFun}>
-                        <h3 className='text-danger'>Total Expenses : {totalExpenses}</h3>
-                        <Input
-                            placeholder='Search'
-                            type='text'
-                            onChange={expensesHandelFilter}
+                    {/* this is the Modal header */}
+                    <div className="modal-header">
+                        <div>
+                            <h3 className='text-danger'>Total Expenses : {totalExpenses}</h3>
+                            <Input
+                                placeholder='Search'
+                                type='text'
+                                onChange={expensesHandelFilter}
 
-                        />
-
-
-                    </ModalHeader>
+                            />
+                        </div>
+                        <div>
+                            <Button outline className="me-2" onClick={() => navigate('/enter-expenses')}>Add New Record</Button>
+                            <button type="button" className="btn-close" aria-label="Close" onClick={showExpensesFun}></button>
+                        </div>
+                    </div>
                     <ModalBody>
                         <DataTable
                             columns={expensesColumns}

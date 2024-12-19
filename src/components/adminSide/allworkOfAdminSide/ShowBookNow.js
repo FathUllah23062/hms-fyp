@@ -208,17 +208,21 @@ export function ShowBookNow() {
 
             <div>
                 <Modal isOpen={showBookNow} toggle={ShowBookNowFun} style={{ maxWidth: '60%', width: '60%' }} >
-                    <ModalHeader toggle={ShowBookNowFun}>
+                    {/* this is the Modal header */}
+                    <div className="modal-header">
+                        <div>
+                            <Input
+                                placeholder='Search'
+                                type='text'
+                                onChange={bookNowHandelFilter}
 
-                        <Input
-                            placeholder='Search'
-                            type='text'
-                            onChange={bookNowHandelFilter}
-
-                        />
-
-
-                    </ModalHeader>
+                            />
+                        </div>
+                        <div>
+                            <Button outline className="me-2" onClick={() => navigate('/book-now')}>Book Bed</Button>
+                            <button type="button" className="btn-close" aria-label="Close" onClick={ShowBookNowFun}></button>
+                        </div>
+                    </div>
                     <ModalBody>
                         <DataTable
                             columns={bookNowColumns}

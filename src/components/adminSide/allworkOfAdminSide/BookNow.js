@@ -67,6 +67,7 @@ export function BookNow() {
         setBedNo('');
         setPrice('');
         setDate('');
+        navigate('/show-book-now');
         toast.success(" The bed is bookd successfuly", {
             position: "top-center"
         });

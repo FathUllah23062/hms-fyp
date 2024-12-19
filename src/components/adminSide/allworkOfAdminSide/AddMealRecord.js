@@ -29,6 +29,7 @@ export function AddMealRecord() {
         setMealDay("");
         setMealTime("");
         setMealType("");
+        navigate('/show-meal')
         toast.success(" Meal Record is add successfully!", {
             position: "top-center"
         });

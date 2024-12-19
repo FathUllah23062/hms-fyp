@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { AdminSideBar } from '../adminSideBar/AdminSideBar';
 import { Home } from '../../userSide/home/Home';
-import { Button, Form, FormGroup, Input, Label, Modal, ModalBody, ModalHeader } from 'reactstrap';
+import { Button, Form, FormGroup, Input, Label, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import DataTable from 'react-data-table-component';
 import { useDispatch, useSelector } from 'react-redux';
 import { getingAvalibalRoomData } from '../../../store/actions/showRoomRecordAction';
@@ -11,6 +11,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { updateRoom } from '../../../store/actions/UpdateRoomAction';
 import { toast } from 'react-toastify';
 import { AdminNavbar } from '../adminNavbar/AdminNavbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Modal.css';
 
 export function ShowRoomRecord() {
     // this code is to show room record
@@ -184,17 +186,21 @@ export function ShowRoomRecord() {
 
             <div>
                 <Modal isOpen={showRoom} toggle={showRoomFun} style={{ maxWidth: '75%', width: '75%' }}>
-                    <ModalHeader toggle={showRoomFun}>
 
-                        <Input
-                            placeholder='Search'
-                            type='text'
-                            onChange={roomHandelFilter}
-
-                        />
-
-
-                    </ModalHeader>
+                    {/* this is the Modal header */}
+                    <div className="modal-header">
+                        <div>
+                            <Input
+                                placeholder="Search"
+                                type="search"
+                                onChange={roomHandelFilter}
+                            />
+                        </div>
+                        <div>
+                            <Button outline className="me-2" onClick={() => navigate('/add-room')}>Add New Record</Button>
+                            <button type="button" className="btn-close" aria-label="Close" onClick={showRoomFun}></button>
+                        </div>
+                    </div>
                     <ModalBody>
                         <DataTable
                             columns={roomColumns}
@@ -202,6 +208,9 @@ export function ShowRoomRecord() {
                             fixedHeader
                         />
                     </ModalBody>
+
+
+
                 </Modal>
             </div>
 
